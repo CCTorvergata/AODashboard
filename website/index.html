@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberChallenge Dashboard</title>
+	<link rel="stylesheet" href="./styles.css">
+    <script>
+        async function copiaNegliAppunti(testo) {
+            try {
+                await navigator.clipboard.writeText(testo);
+            } catch (err) {
+                console.error('Errore nella copia: ', err);
+            }
+        }
+    </script>
+</head>
+<body style="font-size: 1.3em">
+	<div class="container">
+		<div class="text">
+    		<h1>Gameserver</h1>
+    		<p><a href="http://10.10.0.1/" target="_blank">Regole</a></p>
+    		<p><a href="http://10.10.0.1:8081/" target="_blank">FlagIDs</a></p>
+    		<p><a href="http://10.10.0.1/scoreboard" target="_blank">Scoreboard</a></p>
+    		<p><a href="http://10.10.0.1/team/unirm2" target="_blank">Scoreboard team</a></p>
+			<h1>VM</h1>
+    		<p onclick="copiaNegliAppunti('10.60.28.1')">IP VM: <em>10.60.28.1</em></p>
+    		<p onclick="copiaNegliAppunti('OwvSQPR4t5Nn4XBW')">Password root VM: <em>OwvSQPR4t5Nn4XBW</em></p>
+    		<h1>Flagwarehouse</h1>
+    		<p><a href="/flagwarehouse" target="_blank">Link</a></p>
+    		<p onclick="copiaNegliAppunti('password')">Password Web Flagwarehouse: <em>password</em></p>
+    		<h2>Comando del client (da eseguire dentro flagwarehouse/client)</h2>
+    		<p onclick="copiaNegliAppunti('python3 client.py -s http://10.80.28.55:5555 -u &ltusername&gt -t p1cMWXidqD0Hud7Uf6DV -d exploits -v')"><em>python3 client.py -s http://10.80.28.55:5555 -u &ltusername&gt -t p1cMWXidqD0Hud7Uf6DV -d exploits -v</em></p>
+    		<h1>Comandi utili</h1>
+    		<p onclick="copiaNegliAppunti('tar -xvzf /root/ad.tar.gz /root')">Crea archivio servizi: <em>tar -xvzf /root/ad.tar.gz /root</em></p>
+    		<p onclick="copiaNegliAppunti('scp root@10.60.28.1:/root/ad.tar.gz ./')">Download Archivio: <em>scp root@10.60.28.1:/root/ad.tar.gz ./</em></p>
+    		<p onclick="copiaNegliAppunti('ssh-keygen -b 4096 -C \'$(whoami)@$(hostname)\' && ssh-copy-id root@10.60.28.1')">Upload chiave ssh: <em>ssh-keygen -b 4096 -C "$(whoami)@$(hostname)" && ssh-copy-id root@10.60.28.1</em></p>
+    		<h1>Firegex</h1>
+    		<p><a href="http://10.60.28.1:49123/" target="_blank">Web interface</a></p>
+    		<p onclick="copiaNegliAppunti('wvEbGDWEQZ3kN7vnR7Zx')">Password Firegex: <em>wvEbGDWEQZ3kN7vnR7Zx</em></p>
+			<h1>Tulip</h1>
+    		<p><a href="/tulip" target="_blank">Link</a></p>
+			<h1>Servizi</h1>
+			<p><a href="/services.tar.gz" target="_blank">Download Servizi</a><p>
+			<p>exccel: 8000</p>
+			<p>inlook: 1337</p>
+			<p>CC Calendar: 8443</p>
+			<p>ccforms: 3000</p>
+			<p>Servizio 1: Porta</p>
+			<p>Servizio 1: Porta</p>
+		</div>
+		<img src="./logo_haockers.jpg" class="logo" style="max-width: 30%"/>
+	</div>
+</body>
+</html>
