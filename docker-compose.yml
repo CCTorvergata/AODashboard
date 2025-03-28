@@ -3,15 +3,8 @@ services:
     image: httpd:latest
     container_name: dashboard
     restart: unless-stopped
-    networks:
-      tools_network:
-        ipv4_address: 172.18.0.2
     ports:
     - '80:80'
     volumes:
     - ./website:/usr/local/apache2/htdocs
     - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
-
-networks:
-  tools_network:
-    external: true
