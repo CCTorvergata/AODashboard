@@ -1,7 +1,7 @@
 services:
   apache:
     image: httpd:latest
-    container_name: webserver
+    container_name: dashboard
     restart: unless-stopped
     networks:
       tools_network:
