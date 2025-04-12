@@ -1,10 +1,9 @@
 services:
-  apache:
+  dashboard:
     image: nginx:latest
     container_name: dashboard
+    network_mode: host
     restart: unless-stopped
-    ports:
-    - '80:80'
     volumes:
     - ./website:/var/www/html
     - ./default.conf:/etc/nginx/conf.d/default.conf
