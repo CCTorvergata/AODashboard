@@ -16,6 +16,8 @@ services:
       context: .
     restart: unless-stopped
     env_file: .env
+    networks:
+      - dashboard-bridge
 
 networks:
   dashboard-bridge:
